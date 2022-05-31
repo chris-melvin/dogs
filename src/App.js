@@ -4,7 +4,6 @@ import axios from "axios";
 import breedlist from "./Breed.json";
 import Layout from "./Layout";
 import dog from "./images/eastwood-138.png";
-import cooldog from "./images/pablo-146.png";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -40,10 +39,10 @@ function App() {
             onChange={(e) => setBreed(e.target.value)}
           >
             <option className="option-class" value={"collie"}>
-              Breeds
+              collie
             </option>
             {breeds.map((d, i) => (
-              <option key={i} value={d}>
+              <option className="option-class" key={i} value={d}>
                 {d}
               </option>
             ))}
@@ -54,8 +53,8 @@ function App() {
             <img src={dog} alt="dog sitting" className="image-loader" />
           </div>
         ) : (
-          <div className="container">
-            {dogs.slice(0, 20).map((d, i) => (
+          <div id="photos" className="container">
+            {dogs.slice(0, 25).map((d, i) => (
               <img src={d} key={i} alt="dog" className="image" />
             ))}
           </div>
